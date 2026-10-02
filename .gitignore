@@ -1,0 +1,14 @@
+# Python virtual environment (recreate with: python -m venv .venv && .venv/Scripts/python.exe -m pip install -r requirements.txt)
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# any local sqlite db files created by ad-hoc runs of the API (regenerate by just re-running; no fixture data lives in them)
+*.db
+*.sqlite3
+
+# local test/build artifacts
+*.egg-info/
+build/
+dist/

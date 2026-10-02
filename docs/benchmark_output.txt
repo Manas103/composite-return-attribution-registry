@@ -1,0 +1,28 @@
+=== 1. Simulated book scale ===
+generate_book time: 0.031s
+accounts: 240
+securities: 60
+trading days: 756
+composites: 3
+position rows: 2039
+calendar months spanned: 35
+
+=== 2. Daily TWR + composite aggregate (existence) ===
+all-account daily TWR time: 0.099s (181200 registry.daily_twr calls)
+composite 0 (Composite-A) full-period return: 0.331689
+
+=== 3. Attribution reconciliation (numeric claim, tolerance 1e-10 absolute) ===
+attribution run time: 0.651s
+entities x periods measured: 8505 (240 accounts + 3 composites, x 35 months)
+max |sum_of_effects - total_excess_return|: 2.776e-17
+mean |discrepancy|: 2.722e-18
+meets 1e-10 claim: True
+
+=== 4. Oracle cross-check (independent recomputation) ===
+oracle cross-check time: 0.016s (100 samples)
+max |fast_path - oracle|: 1.388e-17
+
+=== 5. Versioned restatement: 30 seeded scenarios ===
+restatement scenarios passed: 30/30
+
+total measurement script time: 0.938s
